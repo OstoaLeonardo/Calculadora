@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="btn_delete">AC</string>
+    <string name="btn_numC">0</string>
+    <string name="btn_num1">1</string>
+    <string name="btn_num2">2</string>
+    <string name="btn_num3">3</string>
+    <string name="btn_num4">4</string>
+    <string name="btn_num5">5</string>
+    <string name="btn_num6">6</string>
+    <string name="btn_num7">7</string>
+    <string name="btn_num8">8</string>
+    <string name="btn_num9">9</string>
+    <string name="btn_dot">.</string>
+    <string name="btn_equal">=</string>
+    <string name="btn_mas">+</string>
+    <string name="btn_men">-</string>
+    <string name="btn_mul">×</string>
+    <string name="btn_div">÷</string>
+    <string name="btn_por">%</string>
+    <string name="btn_par1">(</string>
+    <string name="btn_par2">)</string>
+    <string name="et_error">No se puede dividir por 0</string>
+</resources>

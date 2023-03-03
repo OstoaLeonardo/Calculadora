@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:scrollbarDefaultDelayBeforeFade="100">
+
+            <TextView
+                android:id="@+id/tvNumeros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:lines="1"
+                android:paddingHorizontal="10dp"
+                android:textAlignment="viewEnd"
+                android:textSize="60sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="end"
+        android:lines="1"
+        android:maxLength="25"
+        android:paddingHorizontal="10dp"
+        android:textAlignment="textEnd"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+
+    <TableLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvResultado">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnEspacio1"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="24sp"
+                android:visibility="invisible"
+                app:cornerRadius="18dp"
+                app:iconGravity="textStart"
+                app:iconSize="30dp" />
+
+            <Button
+                android:id="@+id/btnEspacio2"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="24sp"
+                android:visibility="invisible"
+                app:cornerRadius="18dp"
+                app:iconGravity="textStart"
+                app:iconSize="30dp" />
+
+            <Button
+                android:id="@+id/btnTema"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="24sp"
+                app:cornerRadius="18dp"
+                app:icon="@drawable/brightness_6_48px"
+                app:iconGravity="textStart"
+                app:iconSize="25dp" />
+
+            <Button
+                android:id="@+id/btnBack"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressBack"
+                android:textSize="24sp"
+                app:cornerRadius="18dp"
+                app:icon="@drawable/backspace_48px"
+                app:iconGravity="textStart"
+                app:iconSize="30dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnLimpiar"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressDelete"
+                android:text="@string/btn_delete"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btnPar1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_par1"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btnPar2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_par2"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btnDivision"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_div"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn7"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_num7"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btn8"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_num8"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btn9"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_num9"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btnProducto"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_mul"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn4"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_num4"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btn5"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_num5"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btn6"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_num6"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btnResta"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_men"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn1"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_num1"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btn2"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_num2"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btn3"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_num3"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btnSuma"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_mas"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnPunto"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_dot"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btn0"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_numC"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btnPorcentaje"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressButton"
+                android:text="@string/btn_por"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+
+            <Button
+                android:id="@+id/btnIgual"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="pressIgual"
+                android:text="@string/btn_equal"
+                android:textSize="24sp"
+                app:cornerRadius="18dp" />
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
