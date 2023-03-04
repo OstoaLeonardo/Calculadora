@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.content.ContextCompat;
 
 import org.mozilla.javascript.Scriptable;
 
@@ -23,14 +22,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        int currentTheme = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-        if(currentTheme == Configuration.UI_MODE_NIGHT_YES) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.md_theme_dark_background));
-        } else {
-            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.md_theme_light_background));
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        }
 
         tvNumeros = (TextView)findViewById(R.id.tvNumeros);
         tvResultado = (TextView)findViewById(R.id.tvResultado);
@@ -191,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
             expresion = expresion.replaceAll("÷", "/");
             expresion = expresion.replaceAll("\\)\\(", ")*(");
             expresion = expresion.replaceAll("(\\d+)\\(", "$1*(");
-            expresion = expresion.replaceAll("\\)\\d", ")*$");
+            expresion = expresion.replaceAll("(\\))(\\d+)", "$1*$2");
 
             org.mozilla.javascript.Context rhino = org.mozilla.javascript.Context.enter();
             rhino.setOptimizationLevel(-1);
