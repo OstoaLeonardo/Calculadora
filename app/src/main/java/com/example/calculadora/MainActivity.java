@@ -151,6 +151,10 @@ public class MainActivity extends AppCompatActivity {
             resultado = calcularExpresion(expresion);
             tvResultado.setText(resultado);
 
+            if (tvResultado.getText().toString().endsWith(".0")) {
+                tvResultado.setText(tvResultado.getText().toString().replace(".0", ""));
+            }
+
             int currentTheme = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
             if(tvResultado.getText().toString() == "Infinity") {
                 tvResultado.setText(getResources().getText(R.string.et_error));
